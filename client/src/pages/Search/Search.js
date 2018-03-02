@@ -4,7 +4,8 @@ import SearchForm from '../../components/SearchForm/SearchForm';
 import Panel from '../../components/UI/Panel/Panel';
 import ArticleWell from '../../components/ArticleWell/ArticleWell';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
-import API from "../../utils/API";
+import nytAPI from "../../utils/nyt/API";
+import myAPI from "../../utils/api/API";
 
 class Search extends Component {
   state = {
@@ -29,16 +30,36 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getArticles(this.state.labels[0].val, this.state.labels[1].val, this.state.labels[2].val)
+    nytAPI.getArticles(this.state.labels[0].val, this.state.labels[1].val, this.state.labels[2].val)
       .then(res => {
         console.log(res.data.response.docs);
         this.setState({ 
+          labels: [
+            { id: "Topic", val: "" },
+            { id: "Start Year", val: "" },
+            { id: "End Year", val: "" }
+          ],
           results: res.data.response.docs,
           showResults: true 
         });
       })
       .catch(err => this.setState({ error: err.message }));
   } 
+
+  handleArticleSaved = ( event, id ) => {
+    event.preventDefault();
+    const articleIndex = this.state.results.findIndex(result => result._id === id);
+    const article = { ...this.state.results[articleIndex] };
+    myAPI.saveArticle({
+      title: article.headline.main,
+      author: article.source,
+      summary: article.snippet,
+      dateOfArticle: article.pub_date,
+      URL: article.web_url
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  }
 
   render() {
     let searchResults = "Enter all fields to search posts.";
@@ -47,12 +68,12 @@ class Search extends Component {
         return <ArticleWell
           key={article._id}
           articleId={article._id}
-          number={index}
           headline={article.headline.main}
           author={article.source}
           date={article.pub_date}
           URL={article.web_url}
-          summary={article.snippet} />
+          summary={article.snippet}
+          saved={this.handleArticleSaved} />
       });
     }
     return (
