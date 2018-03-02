@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Nav = () =>
   <nav className="navbar navbar-inverse bg-inverse navbar-top">
@@ -9,14 +10,14 @@ const Nav = () =>
           <span className="icon-bar" /> <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
-        <a href="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           New York Times Article Scrubber
-        </a>
+        </Link>
       </div>
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul className="nav navbar-nav navbar-right">
-          <li className="active"><a href="/search">Search<span className="sr-only">(current)</span></a></li>
-          <li><a href="/saved">Saved</a></li>
+          <li className="active"><Link to="/search">Search<span className="sr-only">(current)</span></Link></li>
+          <li><Link to="/saved">Saved</Link></li>
         </ul>
       </div>
     </div>

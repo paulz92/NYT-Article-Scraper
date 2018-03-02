@@ -10,6 +10,7 @@ const SearchFormLabel = (props) => (
       type="text"
       className="form-control"
     />
+    <br></br>
   </Aux>
 );
 
