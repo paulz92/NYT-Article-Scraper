@@ -1,13 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Search from "./pages/Search";
-import Results from "./pages/Results";
-import SavedArticles from './pages/SavedArticles';
-import NoMatch from "./pages/NoMatch";
+import Nav from "./components/Nav/Nav";
+import Search from "./pages/Search/Search";
+import Results from "./pages/Results/Results";
+import SavedArticles from './pages/SavedArticles/SavedArticles';
+import NoMatch from "./pages/NoMatch/NoMatch";
 
 const App = () =>
   <Router>
     <div>
+      <Nav />
       <Switch>
         <Route exact path="/" component={Search} />
         <Route exact path="/search" component={Search} />
