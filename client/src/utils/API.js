@@ -18,7 +18,7 @@ export default {
     } else if (endYear) {
       URL += endDate;
     }
-  
+    
     return axios.get(baseURL + URL);
   }
 };
