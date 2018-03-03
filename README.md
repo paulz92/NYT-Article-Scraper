@@ -28,9 +28,9 @@ To create an app for people wanting to search and read old and current news arti
 - Ensure that you have Node.js and MongoDB installed on your machine.
 - Retrieve your personal NYT API key [here](https://developer.nytimes.com/)
 - Start MongoDB locally by opening a CLI and entering the ```mongod``` command. Leave this CLI window open in the background.
-- In the root of the repo go to client/src/utils/nyt/key.js and on line 4, replace 'INPUT YOUR API KEY HERE' with your api key.
+- Starting at the root of the repo, go to client/src/utils/nyt/key.js and on line 1, replace 'YOURAPIKEY' with your api key.
 - In a new CLI, navigate to the cloned directory. Install the npm dependencies and start the server.
-   
+
     ```yarn```
     ```cd client```
     ```yarn```
