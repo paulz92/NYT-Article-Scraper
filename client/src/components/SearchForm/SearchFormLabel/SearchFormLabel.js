@@ -3,7 +3,7 @@ import Aux from '../../../hoc/Auxiliary/Auxiliary';
 
 const SearchFormLabel = (props) => (
   <Aux>
-    <label htmlFor={props.name}>{props.name}: {props.value}</label>
+    <label htmlFor={props.name}>{props.name}:</label>
     <input
       value={props.value}
       onChange={props.changed}
