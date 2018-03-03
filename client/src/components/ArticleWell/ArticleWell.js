@@ -1,5 +1,5 @@
 import React from 'react';
-import SaveButton from './SaveButton/SaveButton';
+import Button from './Button/Button';
 
 const styles = {
   link: {
@@ -16,8 +16,8 @@ const well = (props) => (
     <h5>By: {props.author}</h5>
     <h5>Date: {props.date}</h5>
     <p> {props.summary}</p>
-    <button className="btn btn-primary"><a style={styles.link} href={props.URL} target="_blank">Visit Link!</a></button>
-    <SaveButton clicked={(event) => props.saved(event, props.articleId)} />
+    <button className="btn btn-primary"><a style={styles.link} href={props.URL} target="_blank">Read Article</a></button>
+    <Button title={props.title} clicked={(event) => props.action(event, props.articleId)} />
   </div>
 );
 
