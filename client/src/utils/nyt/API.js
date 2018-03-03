@@ -1,6 +1,8 @@
 import axios from "axios";
+import YOURAPIKEY from "./key.js";
 
-const baseURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=7db6353afdba44dbb93cf9a5a9886e19";
+const apiKey = process.env.NYT_API_KEY || YOURAPIKEY;
+const baseURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + apiKey;
 
 export default {
   getArticles(query, beginYear, endYear) {
