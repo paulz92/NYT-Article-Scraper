@@ -11,7 +11,7 @@ const Nav = () =>
           <span className="icon-bar" />
         </button>
         <Link to="/" className="navbar-brand">
-          New York Times Article Scrubber
+          New York Times Article Scraper
         </Link>
       </div>
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
