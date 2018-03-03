@@ -11,6 +11,7 @@
     "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "installDeps": "yarn && cd client && yarn",
+    "heroku-prebuild": "cd client && yarn install",
     "heroku-postbuild": "node scripts/build.js"
   },
   "author": "Paul Zavattieri",
