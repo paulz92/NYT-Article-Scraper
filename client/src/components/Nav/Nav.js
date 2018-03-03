@@ -16,7 +16,7 @@ const Nav = () =>
       </div>
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul className="nav navbar-nav navbar-right">
-          <li className="active"><Link to="/search">Search<span className="sr-only">(current)</span></Link></li>
+          <li><Link to="/search">Search</Link></li>
           <li><Link to="/saved">Saved</Link></li>
         </ul>
       </div>

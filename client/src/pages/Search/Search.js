@@ -3,7 +3,6 @@ import Container from '../../components/Container/Container';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import Panel from '../../components/UI/Panel/Panel';
 import ArticleWell from '../../components/ArticleWell/ArticleWell';
-import Aux from '../../hoc/Auxiliary/Auxiliary';
 import nytAPI from "../../utils/nyt/API";
 import myAPI from "../../utils/api/API";
 
@@ -73,21 +72,20 @@ class Search extends Component {
           date={article.pub_date}
           URL={article.web_url}
           summary={article.snippet}
-          saved={this.handleArticleSaved} />
+          action={this.handleArticleSaved}
+          title="Save this article" />
       });
     }
     return (
-      <Aux>
-        <Container>
-          <Panel title="Search for Articles">
-          <SearchForm 
-            submit={this.handleFormSubmit} 
-            changed={this.handleInputChange}
-            labels={this.state.labels} />
-          </Panel>
-          <Panel title="Top Results">{searchResults}</Panel>
-        </Container>
-      </Aux>
+      <Container>
+        <Panel title="Search for Articles">
+        <SearchForm 
+          submit={this.handleFormSubmit} 
+          changed={this.handleInputChange}
+          labels={this.state.labels} />
+        </Panel>
+        <Panel title="Top Results">{searchResults}</Panel>
+      </Container>
     );
   }
 }
