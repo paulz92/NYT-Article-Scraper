@@ -1,2 +1,2 @@
-const apiKey = process.env.NYT_API_KEY || 'YOURAPIKEY';
+const apiKey = process.env.REACT_APP_NYT_API_KEY || 'YOURAPIKEY';
 export default apiKey;
