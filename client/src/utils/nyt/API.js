@@ -1,7 +1,7 @@
 import axios from "axios";
-import YOURAPIKEY from "./key.js";
+//import YOURAPIKEY from "./key.js";
 
-const apiKey = process.env.NYT_API_KEY || YOURAPIKEY;
+const apiKey = process.env.NYT_API_KEY; //|| YOURAPIKEY;
 const baseURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + apiKey;
 
 export default {
