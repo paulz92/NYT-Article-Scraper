@@ -1,2 +1,2 @@
-const key = 'INPUT YOUR API KEY HERE';
-export default key;
+const apiKey = process.env.NYT_API_KEY || 'YOURAPIKEY';
+export default apiKey;
