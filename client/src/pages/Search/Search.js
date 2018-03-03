@@ -31,7 +31,6 @@ class Search extends Component {
     event.preventDefault();
     nytAPI.getArticles(this.state.labels[0].val, this.state.labels[1].val, this.state.labels[2].val)
       .then(res => {
-        console.log(res.data.response.docs);
         this.setState({ 
           labels: [
             { id: "Topic", val: "" },
@@ -56,7 +55,7 @@ class Search extends Component {
       dateOfArticle: article.pub_date,
       URL: article.web_url
     })
-      .then(res => console.log(res))
+      .then(res => alert('Article saved successfully!'))
       .catch(err => console.log(err));
   }
 
